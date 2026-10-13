@@ -64,6 +64,7 @@ export function TermsOfService() {
     <h2>6. Professional services</h2><p>Where we perform software development, consulting, or IT services for you, the scope, deliverables, timelines, fees, acceptance criteria, and ownership of work product are governed by the applicable statement of work, proposal, or services agreement. If such an agreement conflicts with these Terms, the agreement controls for those services.</p>
 
     <h2 id="sms">7. SMS messaging program</h2>
+    <p className="legal-consent">You agree to receive information messages (appointment reminders, account notifications, etc.) from {COMPANY}. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>. You can opt out at any time by replying STOP.</p>
     <p>Infinity Labs operates an SMS text messaging program (the “Program”) through our business phone system, powered by Zoom Phone, to communicate with clients, prospective clients, and NexusFlow users. By opting in, you agree to the following terms:</p>
     <ul>
       <li><strong>Program description.</strong> Messages are conversational and service-related, including responses to your inquiries, project and support updates, appointment scheduling, confirmations and reminders, and account or service notifications. The Program is not used to send marketing or promotional messages.</li>
