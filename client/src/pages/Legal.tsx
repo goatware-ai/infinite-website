@@ -129,6 +129,7 @@ export function PrivacyPolicy() {
     </ul>
 
     <h2 id="sms">3. SMS and text messaging</h2>
+    <p className="legal-consent">Mobile opt-in information, including phone numbers and SMS consent, will not be shared with third parties for marketing purposes. We use it only to send the messages you asked for.</p>
     <p>When you opt in to receive text messages from us, we collect your mobile number and your consent records and use them only to send the service-related messages described in our <Link to="/terms#sms">Terms of Use</Link>, such as responses to inquiries, project and support updates, and appointment reminders. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> to opt out at any time or <strong>HELP</strong> for assistance.</p>
     <p><strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</strong></p>
     <p>Our messaging is delivered through Zoom Phone and the wireless carriers, which process message data solely to transmit messages on our behalf.</p>
