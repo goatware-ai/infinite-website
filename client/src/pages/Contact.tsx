@@ -4,7 +4,7 @@ import { post } from "../api/client";
 import { COMPANY, CONTACT, Shell } from "./Legal";
 
 // Stored with each opt-in as the consent record, so keep it identical to the label shown below.
-const SMS_CONSENT_TEXT = `I agree to receive information messages (appointment reminders, account notifications, etc.) from ${COMPANY} at the mobile number provided. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at ${CONTACT.email}. You can opt out at any time by replying STOP. Consent is not a condition of purchase. See our Terms of Use (infinitylabstechnology.com/terms) and Privacy Policy (infinitylabstechnology.com/privacy).`;
+const SMS_CONSENT_TEXT = `I agree to receive information messages (appointment reminders, account notifications, etc.) from ${COMPANY} at the mobile number provided. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at ${CONTACT.email}. You can opt out at any time by replying STOP, END, QUIT, CANCEL, or UNSUBSCRIBE. Reply HELP for more information. Consent is not a condition of purchase. See our Terms of Use (https://www.infinitylabstechnology.com/terms) and Privacy Policy (https://www.infinitylabstechnology.com/privacy).`;
 
 const emptyForm = { fullName: "", email: "", phone: "", message: "", smsConsent: false };
 
@@ -24,7 +24,7 @@ export default function Contact() {
     }
     setStatus("sending");
     try {
-      await post("/contact", { ...form, smsConsentText: form.smsConsent ? SMS_CONSENT_TEXT : undefined });
+      await post("/contact-requests", { ...form, smsConsentText: form.smsConsent ? SMS_CONSENT_TEXT : undefined });
       setStatus("sent");
       setForm(emptyForm);
     } catch (err) {
@@ -51,7 +51,7 @@ export default function Contact() {
 
         <label className="contact-consent">
           <input type="checkbox" checked={form.smsConsent} onChange={e => update("smsConsent", e.target.checked)} />
-          <span>I agree to receive information messages (appointment reminders, account notifications, etc.) from {COMPANY} at the mobile number provided. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>. You can opt out at any time by replying STOP. Consent is not a condition of purchase. See our <Link to="/terms#sms">Terms of Use</Link> and <Link to="/privacy#sms">Privacy Policy</Link>.</span>
+          <span>I agree to receive information messages (appointment reminders, account notifications, etc.) from {COMPANY} at the mobile number provided. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>. You can opt out at any time by replying STOP, END, QUIT, CANCEL, or UNSUBSCRIBE. Reply HELP for more information. Consent is not a condition of purchase. See our <Link to="/terms#sms">Terms of Use</Link> and <Link to="/privacy#sms">Privacy Policy</Link>.</span>
         </label>
 
         {error && <p className="contact-error" role="alert">{error}</p>}

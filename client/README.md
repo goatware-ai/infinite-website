@@ -16,10 +16,12 @@ npm install
 npm run dev
 ```
 
-Create `.env` from `.env.example` and point it at the API in `../server`:
+## Contact form API
 
-```env
-VITE_API_URL=http://localhost:5000/api
-```
+This site has no backend of its own. The contact form posts to the **teamwork-board** backend
+(`POST /api/contact-requests`), which stores each inquiry and SMS consent record in its database.
 
-The API exposes `POST /api/contact`, which saves contact requests and SMS consent records to PostgreSQL. Apply `server/migrations/001_contact_requests.sql` before first use.
+- Production: the API is served on this domain at `/teamwork-board/api`, so no configuration is needed.
+- Local development: run the teamwork-board backend on port 4000; the Vite dev server proxies
+  `/teamwork-board/api` to it.
+- To use a different API location, set `VITE_API_URL` (see `.env.example`).
