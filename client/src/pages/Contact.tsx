@@ -56,6 +56,7 @@ export default function Contact() {
 
         {error && <p className="contact-error" role="alert">{error}</p>}
         <button type="submit" className="contact-submit" disabled={status === "sending"}>{status === "sending" ? "Sending…" : "Submit"}</button>
+        <p className="contact-disclosure"><strong>SMS disclosure:</strong> By providing a telephone number, checking the SMS consent box, and submitting the form, you are consenting to be contacted by {COMPANY} by SMS text message. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out of further messaging. Reply HELP for more information. See our <Link to="/terms#sms">Terms of Use</Link> and <Link to="/privacy#sms">Privacy Policy</Link>.</p>
       </form>
     )}
 
