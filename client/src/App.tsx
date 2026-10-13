@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CompanyIntro from "./pages/CompanyIntro";
 import { PrivacyPolicy, TermsOfService } from "./pages/Legal";
+import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import { Activity, Appointments, Customers, Notifications, Projects, Tasks } from "./pages/CrudPages";
 
@@ -14,6 +15,7 @@ export default function App() {
       <Route path="/" element={<CompanyIntro />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="/terms" element={<TermsOfService />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route element={<ProtectedRoute />}>

@@ -25,14 +25,11 @@ export async function api<T>(path:string, options:RequestInit = {}):Promise<T> {
     catch { body = { message: raw.slice(0, 240) }; }
   }
   if (!response.ok) {
-<<<<<<< Updated upstream
     if (response.status === 401 && !isAuthEndpoint) {
       localStorage.removeItem("nexusflow_session");
       localStorage.removeItem("nexusflow_token");
       window.dispatchEvent(new Event("nexusflow:unauthorized"));
     }
-=======
->>>>>>> Stashed changes
     const message = typeof body?.message === "string" ? body.message : `HTTP ${response.status} ${response.statusText}`;
     throw new Error(`${message} (API ${path}, status ${response.status})`);
   }

@@ -155,16 +155,16 @@ export default function CompanyIntro() {
           <h2>Let’s build something<br /><span>useful together.</span></h2>
           <p>Have a business challenge, product idea, or question about NexusFlow? We’d be glad to hear from you.</p>
         </div>
-        <div className="simple-contact-card">
+        <Link to="/contact" className="simple-contact-card">
           <span><Mail size={20} /> Start a conversation</span>
           <ArrowRight size={19} />
-        </div>
+        </Link>
       </section>
 
       <footer className="simple-footer">
         <div className="simple-brand footer-brand"><span className="simple-mark">∞</span><span><strong>Infinity Labs</strong><small>Technologies LLC</small></span></div>
         <span>Software engineering × artificial intelligence</span>
-        <div><Link to="/terms">Terms</Link><Link to="/privacy">Privacy</Link><span>© 2026 Infinity Labs Technologies LLC</span></div>
+        <div><Link to="/contact">Contact</Link><Link to="/terms">Terms</Link><Link to="/privacy">Privacy</Link><span>© 2026 Infinity Labs Technologies LLC</span></div>
       </footer>
     </main>
   );
