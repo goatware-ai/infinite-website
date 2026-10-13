@@ -29,12 +29,12 @@ export default function Contact() {
       setForm(emptyForm);
     } catch (err) {
       setStatus("idle");
-      setError(err instanceof Error ? err.message.replace(/ \(API .*\)$/, "") : "Something went wrong. Please try again.");
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     }
   };
 
   return <Shell title="Contact Us" eyebrow="CONTACT / SMS UPDATES" subtitle="We usually reply within one business day.">
-    <p className="legal-intro">Send us a question about a project, NexusFlow, or our services. You can also choose to receive text message updates from {COMPANY}, such as appointment reminders and account notifications, at your mobile number.</p>
+    <p className="legal-intro">Tell us about your project, product idea, or technical challenge, and our team will follow up to discuss how we can help. You can also choose to receive text message updates from {COMPANY}, such as appointment reminders and account notifications, at your mobile number.</p>
 
     {status === "sent" ? (
       <div className="contact-success" role="status">

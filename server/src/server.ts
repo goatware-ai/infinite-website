@@ -11,7 +11,7 @@ const startServer = async (): Promise<void> => {
     console.log("PostgreSQL connected successfully");
 
     app.listen(PORT, () => {
-      console.log(`NexusFlow API running on port ${PORT}`);
+      console.log(`Infinity Labs API running on port ${PORT}`);
     });
   } catch (error) {
     console.error("PostgreSQL connection failed:", error);

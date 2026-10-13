@@ -1,19 +1,13 @@
-# NexusFlow Client
+# Infinity Labs Technologies — Website
 
-A story-first React + TypeScript + Vite client for Infinity Labs Technologies LLC and its NexusFlow product.
+Public website for Infinity Labs Technologies LLC, a software and AI product development company. Built with React, TypeScript, and Vite.
 
-## Experience structure
+## Pages
 
-- `/` — Infinity Labs company introduction and NexusFlow product story
-- `/login` — workspace sign-in
-- `/register` — workspace creation
-- `/workspace` — authenticated NexusFlow workspace
-- `/workspace/customers`
-- `/workspace/projects`
-- `/workspace/tasks`
-- `/workspace/appointments`
-- `/workspace/notifications`
-- `/workspace/activity`
+- `/` — company overview, services, process, and contact call-to-action
+- `/contact` — contact form with optional SMS opt-in (consent is stored by the API)
+- `/terms` — Terms of Use, including the SMS messaging program terms
+- `/privacy` — Privacy Policy
 
 ## Run
 
@@ -22,10 +16,10 @@ npm install
 npm run dev
 ```
 
-Create `.env` from `.env.example`:
+Create `.env` from `.env.example` and point it at the API in `../server`:
 
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
-The public company experience is intentionally presentation-oriented: strong opening, company purpose, capabilities, mission, vision, and product reveal. The authenticated area remains operational and data-focused.
+The API exposes `POST /api/contact`, which saves contact requests and SMS consent records to PostgreSQL. Apply `server/migrations/001_contact_requests.sql` before first use.
